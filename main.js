@@ -32,3 +32,20 @@ palChecker('mary'); //no
 palChecker('racecar'); //yes
 //yes if its palindrome
 
+
+let animals = ['snakes', 'spiders', 'bears', 'birds', 'bees'];
+
+const lastItem = animals.pop(); //bees
+const firstItem = animals.shift(); //snakes
+animals.push('bat');
+console.log('animals', animals); 
+
+// For loops things you need to know 
+// 1.) whats your starting value 
+// 2.) what is your stopping value
+// 3.) how are you incrementing -1 +1
+
+for(let i = 0; i<animals.length; i++){
+    //do something here
+    console.log(animals[i]);
+}
