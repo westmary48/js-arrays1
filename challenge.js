@@ -81,10 +81,31 @@ let elizabethSanger = {
      printToDom(newString, 'donationForm');
 
  };
+
+ const statementsStringBuilder = () => {
+     let newString = '';
+     for(let i=0; i<elizabethSanger.statements.length; i++){
+         newString += `<div class ="statement">`;
+         newString += `<h3>${elizabethSanger.statements[i].statement}</h3>`;
+         newString += `<h6>${elizabethSanger.statements[i].category}</h3>`;
+         newString += `</div>`;
+
+     }
+     printToDom(newString, 'statements');
+
+ };
   voterRegistrationStringBuilder();
   donationFormStringBuilder();
+  statementsStringBuilder();
 
-//   const updatedVoterRegistration = () => {
+//   const updatedVoterRegistration = (newUrl) => { part 3
+const updatedVoterRegistration = (newUrl) => {
+    elizabethSanger.voterRegistrationUrl = newUrl;
+    voterRegistrationStringBuilder();
+
+}
+
+updatedVoterRegistration('classtracker.zoeames.com');
 
 //     //do stuff
 //     voterRegistrationStringBuilder();
