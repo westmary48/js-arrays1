@@ -114,15 +114,44 @@ let elizabethSanger = {
         newString += `<h4>${elizabethSanger.volunteers[i].phone}</h4>`;
         newString += `<h4>${elizabethSanger.volunteers[i].availability}</h4>`;
         newString += `<h4>${elizabethSanger.volunteers[i].activities}</h4>`;
+        newString += `</div>`;
       }
 
       printToDom(newString, 'volunteers');
 
-      const congressionalDistrict = () => {
-        const newString = `<h3>${elizabethSanger.congressionalDistrict}<h/3>`;
+    };
+  const congressionalDistrictStringBuilder = () => {
+        const newString = `<h3>${elizabethSanger.congressionalDistrict}</h3>`;
         printToDom(newString, 'congressionalDistrict');
-      }
 
+      };
+          const eventsStringBuilder = () => {
+            let newString = '';
+            for (let i=0; i<elizabethSanger.events.length; i++) {
+              newString += `<div class="events">`;
+              newString += `<h5>${elizabethSanger.events[i].date}</h5>`;
+              newString += `<h5>${elizabethSanger.events[i].title}</h5>`;
+              newString += `<h5>${elizabethSanger.events[i].description}</h5>`;
+              newString += `</div>`;
+            }
+            printToDom(newString, 'events');
+
+          }
+          
+            const imagesStringBuilder = () => {
+              let newString = '';
+              for (let i=0; i<elizabethSanger.images.length; i++) {
+                newString += `<div class= "images">`;
+                newString += `<img src =${elizabethSanger.images[i].imageUrl}></img>`;
+                newString += `<h4>${elizabethSanger.images[i].description}</h4>`;
+                newString += `<h4>${elizabethSanger.images[i].type}</h4>`;
+                newString += `</div>`;
+                {
+
+              printToDom(newString, 'images');
+        
+                }
+              }
  };
   voterRegistrationStringBuilder();
   donationFormStringBuilder();
@@ -131,16 +160,13 @@ let elizabethSanger = {
   biographyStringBuilder();
   volunteersStringBuilder();
   congressionalDistrictStringBuilder();
+  eventsStringBuilder();
+  imagesStringBuilder();
 
-//   const updatedVoterRegistration = (newUrl) => { part 3
-const updatedVoterRegistration = (newUrl) => {
+
+  const updateVoterRegistration = (newUrl) => {
     elizabethSanger.voterRegistrationUrl = newUrl;
     voterRegistrationStringBuilder();
-
-}
-
-updatedVoterRegistration('classtracker.zoeames.com');
-
-//     //do stuff
-//     voterRegistrationStringBuilder();
-//   }
+ };
+ 
+ updateVoterRegistration('classtracker.zoeames.com');
