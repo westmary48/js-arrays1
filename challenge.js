@@ -170,3 +170,73 @@ let elizabethSanger = {
  };
  
  updateVoterRegistration('classtracker.zoeames.com');
+
+ const updateDonationForm = (newUrl) => {
+   elizabethSanger.donationFormUrl = newUrl;
+   donationFormStringBuilder();
+ };
+
+ updateDonationForm('classtracker.zoeames.com');
+
+const updateStatements = ({statement, category}) => {
+  elizabethSanger.statements.push({statement, category});
+  statementsStringBuilder();
+};
+
+updateStatements({statement:'They took our jobs', category:'More Jobs'});
+
+
+const updateMissionStatement = (newStatement) => {
+  elizabethSanger.missionStatement = newStatement;
+  missionStatementStringBuilder(); 
+
+}
+
+updateMissionStatement('That aint right!');
+
+ const updateBiography = (newBiography) => {
+   elizabethSanger.biography = newBiography;
+   biographyStringBuilder();
+ }
+
+ updateBiography('OH-M-GEE, vote for me!');
+
+ const updateVolunteers = ({name, address, email, phone, availability, activities}) => {
+   elizabethSanger.volunteers.push({name,address,email, phone, availability, activities});
+   volunteersStringBuilder();
+  }
+
+  updateVolunteers({name:'Mary', address:'123 main', email:'westmary@gmail.com', phone:'555-555-5555', availability: 'nights', activities: 'anything you need'});
+
+  const updateCongressionalDistrict = (newDistrict) => {
+    elizabethSanger.congressionalDistrict = newDistrict;
+    congressionalDistrictStringBuilder();
+  }
+updateCongressionalDistrict('1');
+
+const updateEvents = ({date, title, description}) => {
+  elizabethSanger.events.push({date, title, description});
+  eventsStringBuilder();
+}
+
+updateEvents({date:'9/1/2018', title: 'Life Changing Event', description: 'This event will knock your socks off!'});
+
+
+const updateImages = ({imageUrl, description, type}) => {
+  elizabethSanger.images.push({imageUrl, description, type});
+  imagesStringBuilder();
+}
+
+updateImages({imageUrl:'https://i.redd.it/z9y9h61j9crx.jpg', description: 'Adorable Cat', type:'kitten'});
+
+
+
+
+
+
+
+
+
+
+
+
