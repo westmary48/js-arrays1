@@ -93,20 +93,80 @@ let elizabethSanger = {
      }
      printToDom(newString, 'statements');
 
+    }
+    const missionStatementStringBuilder = () => {
+      const newString = `<h3>${elizabethSanger.missionStatement}</h3>`;
+      printToDom(newString, 'missionStatement');
+    };
+
+    const biographyStringBuilder = () => {
+      const newString = `<h3>${elizabethSanger.biography}<h/3>`;
+      printToDom(newString, 'biography');
+
+    }
+    const volunteersStringBuilder = () => {
+      let newString = '';
+      for (let i=0; i<elizabethSanger.volunteers.length; i++) {
+        newString += `<div class ="volunteers">`;
+        newString += `<h4>${elizabethSanger.volunteers[i].name}</h4>`;
+        newString += `<h4>${elizabethSanger.volunteers[i].address}</h4>`;
+        newString += `<h4>${elizabethSanger.volunteers[i].email}</h4>`;
+        newString += `<h4>${elizabethSanger.volunteers[i].phone}</h4>`;
+        newString += `<h4>${elizabethSanger.volunteers[i].availability}</h4>`;
+        newString += `<h4>${elizabethSanger.volunteers[i].activities}</h4>`;
+        newString += `</div>`;
+      }
+
+      printToDom(newString, 'volunteers');
+
+    };
+  const congressionalDistrictStringBuilder = () => {
+        const newString = `<h3>${elizabethSanger.congressionalDistrict}</h3>`;
+        printToDom(newString, 'congressionalDistrict');
+
+      };
+          const eventsStringBuilder = () => {
+            let newString = '';
+            for (let i=0; i<elizabethSanger.events.length; i++) {
+              newString += `<div class="events">`;
+              newString += `<h5>${elizabethSanger.events[i].date}</h5>`;
+              newString += `<h5>${elizabethSanger.events[i].title}</h5>`;
+              newString += `<h5>${elizabethSanger.events[i].description}</h5>`;
+              newString += `</div>`;
+            }
+            printToDom(newString, 'events');
+
+          }
+          
+            const imagesStringBuilder = () => {
+              let newString = '';
+              for (let i=0; i<elizabethSanger.images.length; i++) {
+                newString += `<div class= "images">`;
+                newString += `<img src =${elizabethSanger.images[i].imageUrl}></img>`;
+                newString += `<h4>${elizabethSanger.images[i].description}</h4>`;
+                newString += `<h4>${elizabethSanger.images[i].type}</h4>`;
+                newString += `</div>`;
+                {
+
+              printToDom(newString, 'images');
+        
+                }
+              }
  };
   voterRegistrationStringBuilder();
   donationFormStringBuilder();
   statementsStringBuilder();
+  missionStatementStringBuilder();
+  biographyStringBuilder();
+  volunteersStringBuilder();
+  congressionalDistrictStringBuilder();
+  eventsStringBuilder();
+  imagesStringBuilder();
 
-//   const updatedVoterRegistration = (newUrl) => { part 3
-const updatedVoterRegistration = (newUrl) => {
+
+  const updateVoterRegistration = (newUrl) => {
     elizabethSanger.voterRegistrationUrl = newUrl;
     voterRegistrationStringBuilder();
-
-}
-
-updatedVoterRegistration('classtracker.zoeames.com');
-
-//     //do stuff
-//     voterRegistrationStringBuilder();
-//   }
+ };
+ 
+ updateVoterRegistration('classtracker.zoeames.com');
